@@ -1,4 +1,4 @@
-const CACHE = 'horario-v2';
+const CACHE = 'horario-v3';
 const ASSETS = ['./mi-horario.html', './logo-av.png', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
