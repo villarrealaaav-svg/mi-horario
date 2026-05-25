@@ -1,4 +1,4 @@
-const CACHE = 'horario-v3';
+const CACHE = 'horario-v4';
 const ASSETS = ['./mi-horario.html', './logo-av.png', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -11,6 +11,13 @@ self.addEventListener('activate', e => {
     Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
   ));
   self.clients.claim();
+});
+
+self.addEventListener('message', e => {
+  if(e.data&&e.data.type==='NOTIF'){
+    const{title,body,tag,icon}=e.data;
+    self.registration.showNotification(title,{body,icon,tag,badge:icon,vibrate:[200,100,200]});
+  }
 });
 
 self.addEventListener('fetch', e => {
