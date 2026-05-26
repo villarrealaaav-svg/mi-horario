@@ -1,5 +1,13 @@
-const CACHE = 'horario-v4';
-const ASSETS = ['./mi-horario.html', './logo-av.png', './manifest.json', './icon-192.png', './icon-512.png'];
+const CACHE = 'limitless-v1';
+const ASSETS = [
+  './index.html',
+  './mi-horario.html',
+  './finanzas.html',
+  './logo-av.png',
+  './manifest.json',
+  './icon-192.png',
+  './icon-512.png'
+];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
@@ -21,7 +29,6 @@ self.addEventListener('message', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Solo cachear assets locales, pasar Firebase y Fonts directo a la red
   if (e.request.url.includes('firebase') || e.request.url.includes('fonts.g')) {
     e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
     return;

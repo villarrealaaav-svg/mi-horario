@@ -1,8 +1,8 @@
 {
-  "name": "Mi Horario · AV",
-  "short_name": "Mi Horario",
-  "description": "Mi sistema sostenible — Alejandro Villarreal",
-  "start_url": "./mi-horario.html",
+  "name": "Limitless Systems · AV",
+  "short_name": "Limitless",
+  "description": "Mi ecosistema personal — Alejandro Villarreal",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4efe4",
   "theme_color": "#b5603a",
